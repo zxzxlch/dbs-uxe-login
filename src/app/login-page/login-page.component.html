@@ -1,2 +1,28 @@
-<p>login-page works!</p>
+<div class="login-panel">
+  <img class="logo" src="../../assets/dbs-logo-type.svg" alt="DBS Homepage" />
+  <div class="website-name">DBS iBanking Singapore</div>
+  <form class="login-form">
+    <div>
+      <label for="username">Username</label>
+      <input
+        id="username"
+        name="username"
+        type="text"
+        maxlength="60"
+        spellcheck="false"
+        autocorrect="false"
+      />
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" maxlength="60" />
+    </div>
+    <div><input type="submit" value="Log in" /></div>
+    <div><a href="#">Forgot username or password?</a></div>
+  </form>
+  <div class="signup-prompt">
+    <div>New to DBS iBanking?</div>
+    <div><a href="#">Get Started</a></div>
+  </div>
+</div>
 <app-footer></app-footer>
