@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
     HomePageComponent,
     HeaderComponent,
     FooterComponent,
+    LoginPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
