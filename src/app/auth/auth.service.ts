@@ -33,7 +33,7 @@ function mockErrorResponse(errors: any) {
 @Injectable({
   providedIn: 'root',
 })
-export class AuthenticationService {
+export class AuthService {
   delayDuration: number = 2000;
 
   public get isLoggedIn(): boolean {

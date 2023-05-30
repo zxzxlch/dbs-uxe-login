@@ -1,19 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 
 import {
-  AuthenticationService,
+  AuthService,
   TOKEN_KEY,
   MOCK_USERNAME,
   MOCK_PASSWORD,
-} from './authentication.service';
+} from './auth.service';
 import { HttpResponse } from '@angular/common/http';
 
 describe('AuthenticationService', () => {
-  let service: AuthenticationService;
+  let service: AuthService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(AuthenticationService);
+    service = TestBed.inject(AuthService);
     service.delayDuration = 100;
   });
 
