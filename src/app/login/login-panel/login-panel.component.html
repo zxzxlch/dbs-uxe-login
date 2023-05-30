@@ -24,12 +24,11 @@
           class="block w-full"
           required
         />
-        <div
+        <app-form-field-error
           *ngIf="this.username?.errors?.['required']"
-          class="text-sm text-red-600"
+          message="Please enter a username."
         >
-          Please enter a username.
-        </div>
+        </app-form-field-error>
       </div>
       <div>
         <label for="password" class="block text-sm mb-1.5">Password</label>
@@ -42,12 +41,11 @@
           class="block w-full"
           required
         />
-        <div
+        <app-form-field-error
           *ngIf="this.password?.errors?.['required']"
-          class="text-sm text-red-600"
+          message="Please enter a password."
         >
-          Please enter a password.
-        </div>
+        </app-form-field-error>
       </div>
       <div class="mt-4">
         <app-button [customContent]="true">

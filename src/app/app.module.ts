@@ -10,6 +10,7 @@ import { LoginPanelComponent } from './login/login-panel/login-panel.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonComponent } from './shared/button/button.component';
 import { ButtonContentDirective } from './shared/button-content.directive';
+import { FormFieldErrorComponent } from './shared/form-field-error/form-field-error.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ButtonContentDirective } from './shared/button-content.directive';
     ReactiveFormsModule,
     ButtonComponent,
     ButtonContentDirective,
+    FormFieldErrorComponent
   ],
 })
 export class AppModule {}
