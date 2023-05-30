@@ -1,9 +1,9 @@
-<header class="navbar">
-  <nav>
-    <a routerLink="/">
-      <img class="logo" src="../../assets/dbs-logo-type.svg" alt="DBS Homepage" />
+<header class="navbar flex justify-center w-full bg-white">
+  <nav class="container flex items-center px-4 h-20">
+    <a routerLink="/" class="">
+      <img class="logo h-7 w-auto" src="../../assets/dbs-logo-type.svg" alt="DBS Homepage" />
     </a>
-    <ul>
+    <ul class="nav-links flex flex-auto ml-16 gap-x-12">
       <li><a href="#">About</a></li>
       <li><a href="#">Careers</a></li>
       <li><a href="#">Investors</a></li>
@@ -12,6 +12,6 @@
       <li><a href="#">Foundation</a></li>
       <li><a href="#">Research</a></li>
     </ul>
-    <a routerLink="/login" class="button">Log in</a>
+    <a routerLink="/login" class="button block px-6 py-2 rounded-lg bg-primary text-white font-medium hover:bg-red-700 cursor-pointer">Log in</a>
   </nav>
 </header>

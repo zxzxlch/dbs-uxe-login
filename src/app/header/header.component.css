@@ -1,13 +1,4 @@
-.navbar {
-  display: flex;
-  position: fixed;
-  left: 0px;
-  right: 0px;
-  height: 80px;
-  background-color: var(--color-white);
-}
-
-.navbar .logo {
-  height: 28px;
-  width: auto;
+.nav-links > li > a {
+  font-weight: theme(fontWeight.medium);
+  color: theme(colors.gray.700);
 }
