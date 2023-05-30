@@ -1,72 +1,72 @@
-<div class="login-panel flex flex-col w-[400px] bg-white">
-  <div class="flex-auto px-10 pt-16 pb-16">
-    <img
-      class="logo h-7 w-auto"
-      src="../../assets/dbs-logo-type.svg"
-      alt="DBS Homepage"
-    />
-    <div class="text-xl font-medium mt-4">DBS iBanking Singapore</div>
-    <form [formGroup]="loginForm" class="login-form mt-12 space-y-4">
-      <div class="font-mono text-sm text-blue-700">
-        <div>{{ loginForm.value | json }}</div>
-        <div>{{ loginForm.status }}</div>
-      </div>
-      <div>
-        <label for="username" class="block text-sm mb-1.5"> Username </label>
-        <input
-          id="username"
-          name="username"
-          type="text"
-          formControlName="username"
-          maxlength="60"
-          spellcheck="false"
-          autocorrect="false"
-          class="block w-full"
-          required
-        />
-        <app-form-field-error
-          *ngIf="this.username?.errors?.['required']"
-          message="Please enter a username."
-        >
-        </app-form-field-error>
-      </div>
-      <div>
-        <label for="password" class="block text-sm mb-1.5">Password</label>
-        <input
-          id="password"
-          name="password"
-          type="password"
-          formControlName="password"
-          maxlength="60"
-          class="block w-full"
-          required
-        />
-        <app-form-field-error
-          *ngIf="this.password?.errors?.['required']"
-          message="Please enter a password."
-        >
-        </app-form-field-error>
-      </div>
-      <div class="mt-4">
-        <app-button [customContent]="true">
-          <ng-template appButtonContent>
-            <input type="submit" value="Log in" />
-          </ng-template>
-        </app-button>
-      </div>
-    </form>
-    <div class="mt-8 text-sm font-medium">
-      <a href="#">Forgot username or password?</a>
+<div class="flex-auto px-10 pt-16 pb-16">
+  <img
+    class="logo h-7 w-auto"
+    src="../../assets/dbs-logo-type.svg"
+    alt="DBS Homepage"
+  />
+  <div class="text-xl font-medium mt-4">DBS iBanking Singapore</div>
+  <form [formGroup]="loginForm" class="login-form mt-12 space-y-4">
+    <div>
+      <label for="username" class="block text-sm mb-1.5"> Username </label>
+      <input
+        id="username"
+        name="username"
+        type="text"
+        formControlName="username"
+        maxlength="60"
+        spellcheck="false"
+        autocorrect="false"
+        class="block w-full"
+        required
+      />
+      <app-form-field-error
+        *ngIf="this.username?.errors?.['required']"
+        message="Please enter a username."
+      >
+      </app-form-field-error>
     </div>
-  </div>
-  <div class="signup-prompt flex-none px-10 py-16 border-t border-gray-300">
-    <div class="text-lg">New to DBS iBanking?</div>
+    <div>
+      <label for="password" class="block text-sm mb-1.5">Password</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        formControlName="password"
+        maxlength="60"
+        class="block w-full"
+        required
+      />
+      <app-form-field-error
+        *ngIf="this.password?.errors?.['required']"
+        message="Please enter a password."
+      >
+      </app-form-field-error>
+    </div>
     <div class="mt-4">
-      <app-button variant="secondary" [customContent]="true">
+      <app-button [customContent]="true">
         <ng-template appButtonContent>
-          <a href="#">Get started</a>
+          <input type="submit" value="Log in" />
         </ng-template>
       </app-button>
     </div>
+  </form>
+  <div class="mt-8 text-sm font-medium">
+    <a href="#">Forgot username or password?</a>
+  </div>
+  <!-- Debug -->
+  <!-- <div class="font-mono text-sm text-blue-700">
+    <div>{{ loginForm.value | json }}</div>
+    <div>{{ loginForm.status }}</div>
+  </div> -->
+</div>
+<!-- Sign up prompt -->
+<div class="signup-prompt flex-none px-10 py-16 border-t border-gray-300">
+  <div class="text-lg">New to DBS iBanking?</div>
+  <div class="mt-4">
+    <app-button variant="secondary" [customContent]="true">
+      <ng-template appButtonContent>
+        <a href="#">Get started</a>
+      </ng-template>
+    </app-button>
   </div>
 </div>
