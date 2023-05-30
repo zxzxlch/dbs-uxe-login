@@ -1,28 +1,60 @@
-<div class="login-panel">
-  <img class="logo" src="../../assets/dbs-logo-type.svg" alt="DBS Homepage" />
-  <div class="website-name">DBS iBanking Singapore</div>
-  <form class="login-form">
-    <div>
-      <label for="username">Username</label>
-      <input
-        id="username"
-        name="username"
-        type="text"
-        maxlength="60"
-        spellcheck="false"
-        autocorrect="false"
-      />
+<div class="flex flex-col min-h-screen">
+  <div class="flex flex-auto bg-gray-200">
+    <div class="login-panel flex flex-col w-[400px] bg-white">
+      <div class="flex-auto px-10 pt-16 pb-16">
+        <img
+          class="logo h-7 w-auto"
+          src="../../assets/dbs-logo-type.svg"
+          alt="DBS Homepage"
+        />
+        <div class="text-xl font-medium mt-4">DBS iBanking Singapore</div>
+        <form class="login-form mt-12 space-y-4">
+          <div>
+            <label for="username" class="block text-sm mb-1.5">Username</label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              maxlength="60"
+              spellcheck="false"
+              autocorrect="false"
+              class="block w-full px-2 py-1.5 border border-gray-400 rounded"
+            />
+          </div>
+          <div>
+            <label for="password" class="block text-sm mb-1.5">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              maxlength="60"
+              class="block w-full px-2 py-1.5 border border-gray-400 rounded"
+            />
+          </div>
+          <div class="mt-4">
+            <input
+              type="submit"
+              value="Log in"
+              class="px-6 py-2 rounded-lg bg-primary text-white font-medium hover:bg-red-700 cursor-pointer"
+            />
+          </div>
+        </form>
+        <div class="mt-8 text-sm font-medium">
+          <a href="#">Forgot username or password?</a>
+        </div>
+      </div>
+      <div class="signup-prompt flex-none px-10 py-16 border-t border-gray-300">
+        <div class="text-lg">New to DBS iBanking?</div>
+        <div class="mt-4">
+          <a
+            href="#"
+            class="inline-block px-6 py-1.5 bg-white border-2 border-primary rounded-lg text-primary font-medium hover:bg-red-100 hover:no-underline"
+          >
+            Get Started
+          </a>
+        </div>
+      </div>
     </div>
-    <div>
-      <label for="password">Password</label>
-      <input id="password" name="password" type="password" maxlength="60" />
-    </div>
-    <div><input type="submit" value="Log in" /></div>
-    <div><a href="#">Forgot username or password?</a></div>
-  </form>
-  <div class="signup-prompt">
-    <div>New to DBS iBanking?</div>
-    <div><a href="#">Get Started</a></div>
   </div>
+  <app-footer class="flex-none"></app-footer>
 </div>
-<app-footer></app-footer>

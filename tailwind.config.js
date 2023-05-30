@@ -6,6 +6,13 @@ module.exports = {
   content: ['./src/**/*.{html,ts}'],
   theme: {
     extend: {
+      colors: {
+        primary: '#ee1818',
+        gray: colors.zinc,
+      },
+      fontFamily: {
+        sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
+      },
     },
   },
   plugins: [],

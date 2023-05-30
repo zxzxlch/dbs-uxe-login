@@ -1,0 +1,7 @@
+a {
+  color: theme(colors.gray.100);
+}
+
+.nav-links ul li + li {
+  margin-top: theme(spacing.4);
+}
