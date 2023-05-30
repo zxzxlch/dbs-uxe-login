@@ -1,0 +1,40 @@
+/* Apply styles to the projected content */
+:host ::ng-deep a,
+:host ::ng-deep input {
+  padding: theme(spacing.2) theme(spacing.6);
+  border-radius: theme(borderRadius.lg);
+  background-color: theme(colors.red.600);
+  color: theme(colors.white);
+  font-size: theme(fontSize.base);
+  font-weight: theme(fontWeight.medium);
+}
+/* Override default link styles */
+:host ::ng-deep a {
+  text-decoration: none;
+  display: inline-block;
+}
+:host ::ng-deep input {
+  cursor: pointer;
+}
+
+/* Focus and hover states */
+:host ::ng-deep a:hover,
+:host ::ng-deep a:focus,
+:host ::ng-deep input:hover,
+:host ::ng-deep input:focus {
+  text-decoration: none;
+  background-color: theme(colors.red.700);
+}
+
+/* Secondary variant */
+:host .secondary ::ng-deep a {
+  padding: calc(theme(spacing.2) - 2px) calc(theme(spacing.6) - 2px); /* Compensate for border width */
+  background-color: theme(colors.white);
+  color: theme(colors.red.600);
+  border: 2px solid theme(colors.red.600);
+}
+
+:host .secondary ::ng-deep a:hover,
+:host .secondary ::ng-deep a:focus {
+  background-color: theme(colors.red.100);
+}

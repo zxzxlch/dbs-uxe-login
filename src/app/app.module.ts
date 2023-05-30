@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginPanelComponent } from './login-panel/login-panel.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ButtonComponent } from './shared/button/button.component';
+import { ButtonContentDirective } from './shared/button-content.directive';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginPageComponent,
     LoginPanelComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    ButtonComponent,
+    ButtonContentDirective,
+  ],
 })
 export class AppModule {}
