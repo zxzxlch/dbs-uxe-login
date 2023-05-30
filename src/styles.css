@@ -6,6 +6,7 @@
 :root {
   --font-size-sm: theme(fontSize.sm);
   --color-primary: theme(colors.primary);
+  --color-white: theme(colors.white);
   --color-red-600: theme(colors.red.600);
 }
 

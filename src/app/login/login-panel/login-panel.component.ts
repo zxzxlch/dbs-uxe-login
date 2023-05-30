@@ -4,7 +4,13 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-login-panel',
   templateUrl: './login-panel.component.html',
-  styleUrls: ['./login-panel.component.css'],
+  styles: [
+    `
+      :host {
+        background: var(--color-white);
+      }
+    `,
+  ],
 })
 export class LoginPanelComponent {
   loginForm = this.fb.group({
