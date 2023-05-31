@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
+import { FormFieldComponent } from 'src/app/shared/form-field/form-field.component';
 
 @Component({
   selector: 'app-login-panel',
@@ -20,6 +21,9 @@ import { AuthService } from 'src/app/auth/auth.service';
   ],
 })
 export class LoginPanelComponent {
+  @ViewChildren(FormFieldComponent) formFields:
+    | QueryList<FormFieldComponent>
+    | undefined;
   #submitting: boolean = false;
   #submitted: boolean = false;
 
@@ -54,16 +58,23 @@ export class LoginPanelComponent {
   ) {}
 
   onSubmit(): void {
-    this.#submitted = true;
-
     // Prevent submitting again while submitting
     if (this.submitting) return;
+
+    // Mark form as submitted before
+    this.#submitted = true;
+
+    // Now that validation has been performed, get all form fields to show
+    // any error messages
+    this.formFields?.forEach((formField) => {
+      formField.updateError();
+    });
 
     // If form has errors, cancel submit, focus on first field with errors
     // TODO: Focus on first field with error
     if (!this.loginForm.valid) return;
 
-    // TODO: Disable form and show loading state
+    // Disable form and show loading state
     const { username, password } = this.loginForm.value;
     this.#submitting = true;
     this.authService.authenticate(username!, password!).subscribe((res) => {

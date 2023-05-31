@@ -1,11 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-form-field-error',
   standalone: true,
   imports: [CommonModule],
-  template: `<small class="message">{{ message }}</small>`,
+  template: `
+    <small [id]="id" class="message">
+      {{ message }}
+    </small>
+  `,
   styles: [
     `
       .message {
@@ -16,5 +20,6 @@ import { CommonModule } from '@angular/common';
   ],
 })
 export class FormFieldErrorComponent {
+  @Input() id: string | undefined;
   @Input() message: string = '';
 }

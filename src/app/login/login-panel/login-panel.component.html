@@ -17,42 +17,33 @@
       message="Wrong username or password. Try again or select Forgot username or password."
     >
     </app-form-field-error>
-    <div>
-      <label for="username" class="block mb-1.5">Username</label>
+    <!-- Form field  -->
+    <app-form-field name="username">
+      <label appFormFieldLabel class="block mb-1.5">Username</label>
       <input
-        id="username"
-        name="username"
-        type="text"
+        appFormFieldInput
         formControlName="username"
+        type="text"
         maxlength="60"
         spellcheck="false"
         autocorrect="false"
         class="block w-full"
         required
       />
-      <app-form-field-error
-        *ngIf="submitted && username?.errors?.['required']"
-        message="Please enter a username."
-      >
-      </app-form-field-error>
-    </div>
-    <div>
-      <label for="password" class="block mb-1.5">Password</label>
+      <app-form-field-error></app-form-field-error>
+    </app-form-field>
+    <app-form-field name="password">
+      <label class="block mb-1.5">Password</label>
       <input
-        id="password"
-        name="password"
-        type="password"
+        appFormFieldInput
         formControlName="password"
+        type="password"
         maxlength="60"
         class="block w-full"
         required
       />
-      <app-form-field-error
-        *ngIf="submitted && password?.errors?.['required']"
-        message="Please enter a password."
-      >
-      </app-form-field-error>
-    </div>
+      <app-form-field-error></app-form-field-error>
+    </app-form-field>
     <!-- Submit button -->
     <div class="relative inline-block mt-4">
       <input

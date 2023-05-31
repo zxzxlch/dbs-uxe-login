@@ -11,6 +11,11 @@ import { FormFieldErrorComponent } from './shared/form-field-error/form-field-er
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 import { ButtonDirective } from './shared/button/button.directive';
 import { LoadingAnimComponent } from './shared/loading-anim/loading-anim.component';
+import { FormFieldComponent } from './shared/form-field/form-field.component';
+import {
+  FormFieldInputDirective,
+  FormFieldLabelDirective,
+} from './shared/form-field/form-field.directive';
 
 @NgModule({
   declarations: [
@@ -28,8 +33,11 @@ import { LoadingAnimComponent } from './shared/loading-anim/loading-anim.compone
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormFieldComponent,
     FormFieldErrorComponent,
-    LoadingAnimComponent
+    FormFieldLabelDirective,
+    FormFieldInputDirective,
+    LoadingAnimComponent,
   ],
 })
 export class AppModule {}
