@@ -13,8 +13,13 @@
   --font-weight-semibold: theme(fontWeight.semibold);
   --color-primary: theme(colors.primary);
   --color-white: theme(colors.white);
+  --color-gray-100: theme(colors.gray.100);
   --color-gray-900: theme(colors.gray.900);
   --color-red-600: theme(colors.red.600);
+  --spacing-2: theme(spacing.2);
+  --spacing-3: theme(spacing.3);
+  --spacing-4: theme(spacing.4);
+  --spacing-5: theme(spacing.5);
 }
 
 * {

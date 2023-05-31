@@ -3,10 +3,12 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-dashboard-page',
   template: `
-    <div class="flex flex-col min-h-screen">
+    <div class="flex flex-col min-h-screen bg-gray-50">
       <!-- Nav bar -->
       <header class="navbar flex justify-center w-full bg-white shadow-sm">
-        <nav class="container flex justify-between items-center px-4 h-20">
+        <nav
+          class="container flex justify-between items-center px-4 h-16"
+        >
           <!-- Nav logo -->
           <a routerLink="/dashboard" class="logo flex items-center">
             <img
@@ -28,8 +30,11 @@ import { Component } from '@angular/core';
         </nav>
       </header>
       <div class="flex-auto">
-        <div class="container mx-auto px-4 pt-12">
-          <h1 class="text-2xl">Welcome, Odo!</h1>
+        <div class="container mx-auto px-4 pt-12 pb-12">
+          <div class="pb-20">
+            <!-- Content -->
+            <h1 class="text-2xl">Welcome, Odo!</h1>
+          </div>
         </div>
       </div>
       <app-footer siteName="DBS iBanking"></app-footer>

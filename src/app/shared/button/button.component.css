@@ -1,7 +1,16 @@
 /* Apply styles to the projected content */
+:host {
+  /* Padding for large screens */
+  --screen-px: var(--spacing-5);
+  --screen-py: var(--spacing-2);
+  /* Padding for small screens */
+  --screen-sm-px: var(--spacing-4);
+  --screen-sm-py: var(--spacing-2);
+}
+
 :host ::ng-deep a,
 :host ::ng-deep input {
-  padding: theme(spacing.2) theme(spacing.6);
+  padding: var(--screen-sm-py) var(--screen-sm-px);
   border: none;
   border-radius: theme(borderRadius.lg);
   background-color: theme(colors.red.600);
@@ -9,6 +18,14 @@
   font-size: theme(fontSize.base);
   font-weight: theme(fontWeight.medium);
 }
+
+@media screen(sm) {
+  :host ::ng-deep a,
+  :host ::ng-deep input {
+    padding: var(--screen-py) var(--screen-px);
+  }
+}
+
 /* Override default link styles */
 :host ::ng-deep a {
   text-decoration: none;
@@ -29,10 +46,16 @@
 
 /* Secondary variant */
 :host .secondary ::ng-deep a {
-  padding: calc(theme(spacing.2) - 2px) calc(theme(spacing.6) - 2px); /* Compensate for border width */
+  padding: calc(var(--screen-sm-py) - 2px) calc(var(--screen-sm-px) - 2px); /* Compensate for border width */
   background-color: theme(colors.white);
   color: theme(colors.red.600);
   border: 2px solid theme(colors.red.600);
+}
+
+@media screen(sm) {
+  :host .secondary ::ng-deep a {
+    padding: calc(var(--screen-py) - 2px) calc(var(--screen-px) - 2px); /* Compensate for border width */
+  }
 }
 
 :host .secondary ::ng-deep a:hover,
