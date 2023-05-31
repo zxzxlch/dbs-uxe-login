@@ -12,6 +12,11 @@
     (ngSubmit)="onSubmit()"
     class="login-form mt-12 space-y-4"
   >
+    <app-form-field-error
+      *ngIf="submitted && loginForm.errors?.['failedAuthentication']"
+      message="Wrong username or password. Try again or select Forgot username or password."
+    >
+    </app-form-field-error>
     <div>
       <label for="username" class="block text-sm mb-1.5"> Username </label>
       <input
@@ -61,8 +66,13 @@
   </div>
   <!-- Debug -->
   <!-- <div class="font-mono text-sm text-blue-700">
-    <div>{{ loginForm.value | json }}</div>
     <div>{{ loginForm.status }}</div>
+    <div>{{ loginForm.value | json }}</div>
+    <ul>
+      <li *ngFor="let control of loginForm.controls | keyvalue">
+        {{ control.key }}: Errors {{ control.value.errors | json }}
+      </li>
+    </ul>
   </div> -->
 </div>
 <!-- Sign up prompt -->

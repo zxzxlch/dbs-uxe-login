@@ -43,18 +43,21 @@ export class LoginPanelComponent {
 
   onSubmit(): void {
     this.submitted = true;
-    if (this.loginForm.errors) return;
+
+    // If form has errors, cancel submit, focus on first field with errors
     // TODO: Focus on first field with error
+    if (this.loginForm.errors) return;
 
     // TODO: Disable form and show loading state
-
     const { username, password } = this.loginForm.value;
     this.authService.authenticate(username!, password!).subscribe((res) => {
       if (this.authService.isLoggedIn) {
         // Logged in, redirect
         this.router.navigateByUrl('/dashboard');
       } else {
-        // TODO: Show errors
+        // Show authentication errors
+        this.loginForm.setErrors({ failedAuthentication: true });
+        // TODO: Focus on the first field with an error
       }
     });
   }
