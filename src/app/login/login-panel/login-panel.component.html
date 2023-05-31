@@ -53,8 +53,16 @@
       >
       </app-form-field-error>
     </div>
-    <div class="mt-4">
-      <input appButton type="submit" value="Log in" />
+    <!-- Submit button -->
+    <div class="relative inline-block mt-4">
+      <input
+        appButton
+        type="submit"
+        value="Log in"
+        [style.color]="submitting ? 'transparent' : null"
+      />
+      <!-- Loading state animation shows when form is submitting -->
+      <app-loading-anim [class.hidden]="!submitting"></app-loading-anim>
     </div>
   </form>
   <div class="mt-8 text-sm font-medium">

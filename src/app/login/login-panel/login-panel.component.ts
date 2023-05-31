@@ -20,7 +20,16 @@ import { AuthService } from 'src/app/auth/auth.service';
   ],
 })
 export class LoginPanelComponent {
-  submitted: boolean = false;
+  #submitting: boolean = false;
+  #submitted: boolean = false;
+
+  public get submitted(): boolean {
+    return this.#submitted;
+  }
+
+  public get submitting(): boolean {
+    return this.#submitting;
+  }
 
   loginForm = this.fb.group(
     {
@@ -45,7 +54,10 @@ export class LoginPanelComponent {
   ) {}
 
   onSubmit(): void {
-    this.submitted = true;
+    this.#submitted = true;
+
+    // Prevent submitting again while submitting
+    if (this.submitting) return;
 
     // If form has errors, cancel submit, focus on first field with errors
     // TODO: Focus on first field with error
@@ -53,7 +65,9 @@ export class LoginPanelComponent {
 
     // TODO: Disable form and show loading state
     const { username, password } = this.loginForm.value;
+    this.#submitting = true;
     this.authService.authenticate(username!, password!).subscribe((res) => {
+      this.#submitting = false;
       if (this.authService.isLoggedIn) {
         // Logged in, redirect
         this.router.navigateByUrl('/dashboard');

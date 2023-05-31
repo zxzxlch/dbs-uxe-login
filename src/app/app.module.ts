@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormFieldErrorComponent } from './shared/form-field-error/form-field-error.component';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 import { ButtonDirective } from './shared/button/button.directive';
+import { LoadingAnimComponent } from './shared/loading-anim/loading-anim.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ButtonDirective } from './shared/button/button.directive';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormFieldErrorComponent
+    FormFieldErrorComponent,
+    LoadingAnimComponent
   ],
 })
 export class AppModule {}
