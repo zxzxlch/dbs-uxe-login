@@ -26,7 +26,7 @@
         required
       />
       <app-form-field-error
-        *ngIf="this.username?.errors?.['required']"
+        *ngIf="submitted && username?.errors?.['required']"
         message="Please enter a username."
       >
       </app-form-field-error>
@@ -43,7 +43,7 @@
         required
       />
       <app-form-field-error
-        *ngIf="this.password?.errors?.['required']"
+        *ngIf="submitted && password?.errors?.['required']"
         message="Please enter a password."
       >
       </app-form-field-error>

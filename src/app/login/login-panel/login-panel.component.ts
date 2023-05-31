@@ -11,6 +11,11 @@ import { AuthService } from 'src/app/auth/auth.service';
       :host {
         background: var(--color-white);
       }
+      .ng-submitted input[type='email'].ng-invalid,
+      .ng-submitted input[type='text'].ng-invalid,
+      .ng-submitted input[type='password'].ng-invalid {
+        border: 2px solid var(--color-red-500);
+      }
     `,
   ],
 })
@@ -42,13 +47,12 @@ export class LoginPanelComponent {
     // TODO: Focus on first field with error
 
     // TODO: Disable form and show loading state
-    
 
     const { username, password } = this.loginForm.value;
     this.authService.authenticate(username!, password!).subscribe((res) => {
       if (this.authService.isLoggedIn) {
         // Logged in, redirect
-        this.router.navigateByUrl('/dashboard', );
+        this.router.navigateByUrl('/dashboard');
       } else {
         // TODO: Show errors
       }
