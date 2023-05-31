@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonComponent } from './shared/button/button.component';
 import { ButtonContentDirective } from './shared/button-content.directive';
 import { FormFieldErrorComponent } from './shared/form-field-error/form-field-error.component';
+import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FormFieldErrorComponent } from './shared/form-field-error/form-field-er
     FooterComponent,
     LoginPageComponent,
     LoginPanelComponent,
+    DashboardPageComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

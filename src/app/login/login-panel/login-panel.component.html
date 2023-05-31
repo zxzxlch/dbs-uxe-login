@@ -5,7 +5,11 @@
     alt="DBS Homepage"
   />
   <div class="text-xl font-medium mt-4">DBS iBanking Singapore</div>
-  <form [formGroup]="loginForm" class="login-form mt-12 space-y-4">
+  <form
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
+    class="login-form mt-12 space-y-4"
+  >
     <div>
       <label for="username" class="block text-sm mb-1.5"> Username </label>
       <input
