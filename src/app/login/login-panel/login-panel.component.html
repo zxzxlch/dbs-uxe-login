@@ -54,11 +54,7 @@
       </app-form-field-error>
     </div>
     <div class="mt-4">
-      <app-button [customContent]="true">
-        <ng-template appButtonContent>
-          <input type="submit" value="Log in" />
-        </ng-template>
-      </app-button>
+      <input appButton type="submit" value="Log in" />
     </div>
   </form>
   <div class="mt-8 text-sm font-medium">
@@ -81,10 +77,6 @@
 >
   <h2 class="text-lg">New to DBS iBanking?</h2>
   <div class="mt-4">
-    <app-button variant="secondary" [customContent]="true">
-      <ng-template appButtonContent>
-        <a href="#">Get started</a>
-      </ng-template>
-    </app-button>
+    <a href="#" appButton class="app-button-secondary">Get started</a>
   </div>
 </div>

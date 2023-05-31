@@ -7,10 +7,9 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { LoginPageComponent } from './login/login-page/login-page.component';
 import { LoginPanelComponent } from './login/login-panel/login-panel.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ButtonComponent } from './shared/button/button.component';
-import { ButtonContentDirective } from './shared/button-content.directive';
 import { FormFieldErrorComponent } from './shared/form-field-error/form-field-error.component';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
+import { ButtonDirective } from './shared/button/button.directive';
 
 @NgModule({
   declarations: [
@@ -20,6 +19,7 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
     LoginPageComponent,
     LoginPanelComponent,
     DashboardPageComponent,
+    ButtonDirective,
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -27,8 +27,6 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    ButtonComponent,
-    ButtonContentDirective,
     FormFieldErrorComponent
   ],
 })

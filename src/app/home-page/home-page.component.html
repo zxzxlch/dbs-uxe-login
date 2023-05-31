@@ -18,11 +18,7 @@
         <h1 class="text-2xl font-medium mb-6">DBS digibank online</h1>
         <p>Already a digibank user?</p>
         <div class="mt-4">
-          <app-button variant="secondary" [customContent]="true">
-            <ng-template appButtonContent>
-              <a routerLink="/dashboard">Log in</a>
-            </ng-template>
-          </app-button>
+          <a routerLink="/dashboard" appButton class="app-button-secondary">Log in</a>
         </div>
       </article>
     </div>

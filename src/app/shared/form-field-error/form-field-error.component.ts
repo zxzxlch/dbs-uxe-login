@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-form-field-error',
   standalone: true,
   imports: [CommonModule],
-  template: ` <small class="message">{{ message }}</small> `,
+  template: `<small class="message">{{ message }}</small>`,
   styles: [
     `
       .message {

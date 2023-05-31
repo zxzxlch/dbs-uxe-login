@@ -21,11 +21,7 @@ import { Component } from '@angular/core';
             >
           </a>
           <div>
-            <app-button [customContent]="true">
-              <ng-template appButtonContent>
-                <a routerLink="/logout">Log out</a>
-              </ng-template>
-            </app-button>
+            <a routerLink="/logout" appButton>Log out</a>
           </div>
         </nav>
       </header>
