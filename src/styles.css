@@ -5,8 +5,15 @@
 
 :root {
   --font-size-sm: theme(fontSize.sm);
+  --font-size-base: theme(fontSize.base);
+  --font-size-lg: theme(fontSize.lg);
+  --font-size-xl: theme(fontSize.xl);
+  --font-size-2xl: theme(fontSize.2xl);
+  --font-weight-medium: theme(fontWeight.medium);
+  --font-weight-semibold: theme(fontWeight.semibold);
   --color-primary: theme(colors.primary);
   --color-white: theme(colors.white);
+  --color-gray-900: theme(colors.gray.900);
   --color-red-600: theme(colors.red.600);
 }
 

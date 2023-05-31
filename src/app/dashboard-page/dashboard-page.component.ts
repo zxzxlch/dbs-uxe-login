@@ -7,15 +7,19 @@ import { Component } from '@angular/core';
       <!-- Nav bar -->
       <header class="navbar flex justify-center w-full bg-white shadow-sm">
         <nav class="container flex justify-between items-center px-4 h-20">
-          <a routerLink="/dashboard" class="">
+          <!-- Nav logo -->
+          <a routerLink="/dashboard" class="logo flex items-center">
             <img
-              class="logo h-7 w-auto"
-              src="../../assets/dbs-logo-type.svg"
-              alt="DBS Homepage"
+              class="w-7 h-7"
+              src="../../assets/dbs-logo-mark.svg"
+              alt="DBS Bank logo"
             />
+            <span class="ml-3 pl-3 py-1 border-l border-gray-300"
+              >DBS iBanking</span
+            >
           </a>
           <div>
-            <app-button variant="secondary" [customContent]="true">
+            <app-button [customContent]="true">
               <ng-template appButtonContent>
                 <a routerLink="/logout">Log out</a>
               </ng-template>
@@ -24,13 +28,25 @@ import { Component } from '@angular/core';
         </nav>
       </header>
       <div class="flex-auto">
-        <div class="container mx-auto">
-          <h1 class="text-xl font-semibold">You're logged in!</h1>
+        <div class="container mx-auto px-4 pt-12">
+          <h1 class="text-2xl">Welcome, Odo!</h1>
         </div>
       </div>
       <app-footer siteName="DBS iBanking"></app-footer>
     </div>
   `,
-  styles: [],
+  styles: [
+    `
+      .navbar a.logo {
+        font-size: var(--font-size-xl);
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-gray-900);
+      }
+      .navbar a.logo:hover,
+      .navbar a.logo:focus {
+        text-decoration: none;
+      }
+    `,
+  ],
 })
 export class DashboardPageComponent {}
