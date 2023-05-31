@@ -14,13 +14,19 @@
   --color-primary: theme(colors.primary);
   --color-white: theme(colors.white);
   --color-gray-100: theme(colors.gray.100);
+  --color-gray-400: theme(colors.gray.400);
   --color-gray-900: theme(colors.gray.900);
+  --color-red-100: theme(colors.red.100);
   --color-red-500: theme(colors.red.500);
   --color-red-600: theme(colors.red.600);
+  --color-red-700: theme(colors.red.700);
+  --spacing-1-5: theme(spacing[1.5]);
   --spacing-2: theme(spacing.2);
   --spacing-3: theme(spacing.3);
   --spacing-4: theme(spacing.4);
   --spacing-5: theme(spacing.5);
+  --border-radius-default: theme(borderRadius.DEFAULT);
+  --border-radius-lg: theme(borderRadius.lg);
 }
 
 * {
@@ -30,7 +36,7 @@
 }
 
 body {
-  color: theme(colors.gray.900);
+  color: var(--color-gray-900);
 }
 
 a {
@@ -47,7 +53,71 @@ a:hover {
 input[type='email'],
 input[type='text'],
 input[type='password'] {
-  padding: calc(theme(spacing[1.5]) - 1px) calc(theme(spacing.2) - 1px); /* Compensate for border width */
-  border: 1px solid theme(colors.gray.400);
-  border-radius: theme(borderRadius.DEFAULT);
+  padding: calc(var(--spacing-1-5) - 1px) calc(var(--spacing-2) - 1px); /* Compensate for border width */
+  border: 1px solid var(--color-gray-400);
+  border-radius: var(--border-radius-default);
+}
+
+/* Button component */
+
+:root {
+  /* Padding for large screens */
+  --screen-px: var(--spacing-5);
+  --screen-py: var(--spacing-2);
+  /* Padding for small screens */
+  --screen-sm-px: var(--spacing-4);
+  --screen-sm-py: var(--spacing-2);
+}
+.app-button {
+  padding: var(--screen-sm-py) var(--screen-sm-px);
+  border: none;
+  border-radius: var(--border-radius-lg);
+  background-color: var(--color-red-600);
+  color: var(--color-white);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+}
+@media screen(sm) {
+  .app-button {
+    padding: var(--screen-py) var(--screen-px);
+  }
+}
+
+/* States */
+.app-button:hover,
+.app-button:focus,
+.app-button:active {
+  background-color: var(--color-red-700);
+}
+
+/* Secondary variant */
+.app-button.app-button-secondary {
+  padding: calc(var(--screen-sm-py) - 2px) calc(var(--screen-sm-px) - 2px); /* Compensate for border width */
+  background-color: var(--color-white);
+  color: var(--color-red-600);
+  border: 2px solid var(--color-red-600);
+}
+@media screen(sm) {
+  .app-button.app-button-secondary {
+    padding: calc(var(--screen-py) - 2px) calc(var(--screen-px) - 2px); /* Compensate for border width */
+  }
+}
+.app-button.app-button-secondary:hover,
+.app-button.app-button-secondary:focus,
+.app-button.app-button-secondary:active {
+  background-color: var(--color-red-100);
+}
+
+/* Override styles for specific elements */
+a.app-button {
+  display: inline-block;
+}
+a.app-button,
+a.app-button:hover,
+a.app-button:focus,
+a.app-button:active {
+  text-decoration: none;
+}
+input.app-button {
+  cursor: pointer;
 }
