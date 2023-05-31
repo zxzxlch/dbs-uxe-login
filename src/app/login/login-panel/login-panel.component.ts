@@ -22,10 +22,13 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class LoginPanelComponent {
   submitted: boolean = false;
 
-  loginForm = this.fb.group({
-    username: ['', [Validators.required, Validators.maxLength(60)]],
-    password: ['', [Validators.required, Validators.maxLength(60)]],
-  });
+  loginForm = this.fb.group(
+    {
+      username: ['', [Validators.required, Validators.maxLength(60)]],
+      password: ['', [Validators.required, Validators.maxLength(60)]],
+    },
+    { updateOn: 'submit' }
+  );
 
   public get username() {
     return this.loginForm.get('username');
@@ -46,7 +49,7 @@ export class LoginPanelComponent {
 
     // If form has errors, cancel submit, focus on first field with errors
     // TODO: Focus on first field with error
-    if (this.loginForm.errors) return;
+    if (!this.loginForm.valid) return;
 
     // TODO: Disable form and show loading state
     const { username, password } = this.loginForm.value;
