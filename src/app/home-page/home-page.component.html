@@ -1,5 +1,31 @@
 <div class="flex flex-col min-h-screen">
-  <app-header></app-header>
-  <div class="flex-auto"></div>
+  <!-- Nav bar -->
+  <header class="navbar flex justify-center w-full bg-white shadow-sm">
+    <nav class="container flex items-center px-4 h-20">
+      <a routerLink="/" class="">
+        <img
+          class="logo h-7 w-auto"
+          src="../../assets/dbs-logo-type.svg"
+          alt="DBS Homepage"
+        />
+      </a>
+    </nav>
+  </header>
+  <div class="flex-auto">
+    <div class="container mx-auto px-4 pt-12">
+      <!-- Content -->
+      <article>
+        <h1 class="text-2xl font-medium mb-6">DBS digibank online</h1>
+        <p>Already a digibank user?</p>
+        <div class="mt-4">
+          <app-button variant="secondary" [customContent]="true">
+            <ng-template appButtonContent>
+              <a routerLink="/dashboard">Log in</a>
+            </ng-template>
+          </app-button>
+        </div>
+      </article>
+    </div>
+  </div>
   <app-footer></app-footer>
 </div>
