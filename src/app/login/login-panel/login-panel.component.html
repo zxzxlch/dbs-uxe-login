@@ -1,10 +1,12 @@
-<div class="flex-auto px-10 pt-16 pb-16">
+<div class="flex-auto px-5 sm:px-10 pt-12 sm:pt-16 pb-16">
+  <!-- Logo and site name -->
   <img
     class="logo h-7 w-auto"
     src="../../assets/dbs-logo-type.svg"
     alt="DBS Homepage"
   />
   <div class="text-xl font-medium mt-4">DBS iBanking Singapore</div>
+  <!-- Login form -->
   <form
     [formGroup]="loginForm"
     (ngSubmit)="onSubmit()"
@@ -64,7 +66,9 @@
   </div> -->
 </div>
 <!-- Sign up prompt -->
-<div class="signup-prompt flex-none px-10 py-16 border-t border-gray-300">
+<div
+  class="signup-prompt flex-none px-5 sm:px-10 py-16 border-t border-gray-300"
+>
   <div class="text-lg">New to DBS iBanking?</div>
   <div class="mt-4">
     <app-button variant="secondary" [customContent]="true">
