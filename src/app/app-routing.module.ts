@@ -4,11 +4,17 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { LoginPageComponent } from './login/login-page/login-page.component';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 import { authGuard } from './auth/auth.guard';
+import { LogoutComponent } from './login/logout/logout.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomePageComponent },
   { path: 'login', component: LoginPageComponent },
-  { path: 'dashboard', component: DashboardPageComponent, canActivate: [authGuard] },
+  { path: 'logout', component: LogoutComponent, canActivate: [authGuard] },
+  {
+    path: 'dashboard',
+    component: DashboardPageComponent,
+    canActivate: [authGuard],
+  },
 ];
 
 @NgModule({
