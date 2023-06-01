@@ -1,27 +1,19 @@
-# DbsUxeLogin
+# DBS UXE Assignment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+This is a simple login screen prototype built with Angular.
 
-## Development server
+The login form uses `FormFieldComponent`, which wraps a label, input element and a `FormFieldErrorComponent`. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+It also enhances accessibility by adding ids and attributes to its components. The form performs validation on submission. It'll show errors for invalid fields and failed authentication.
 
-## Code scaffolding
+## Set Up
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To set up the project on your local machine, follow these steps:
 
-## Build
+- Make sure you have Angular installed.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Run `npm install` to install the necessary dependencies.
 
-## Running unit tests
+- Execute `npm start` to launch the application. It will be accessible at http://localhost:4200/.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+You can also view the deployed app on [https://dbs-uxe-login.vercel.app](https://dbs-uxe-login.vercel.app).
