@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MOCK_USERNAME } from 'src/app/auth/auth.service';
+import { MOCK_PASSWORD } from 'src/app/auth/auth.service';
 import { AuthService } from 'src/app/auth/auth.service';
 import { FormFieldComponent } from 'src/app/shared/form-field/form-field.component';
 
@@ -99,8 +101,14 @@ export class LoginPanelComponent {
       // Find the first field with an error
       if (!formField.formControlName) continue;
       if (formField.formControlName.errors) {
-        formField.inputElement?.focus()
+        formField.inputElement?.focus();
       }
     }
+  }
+
+  // Just for this mock scenario, show the mock username and password 
+  onSelectUsernameOrPassword(evt: Event): void {
+    evt.preventDefault();
+    alert(`Username: ${MOCK_USERNAME}\nPassword: ${MOCK_PASSWORD}`);
   }
 }
