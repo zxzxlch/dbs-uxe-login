@@ -4,10 +4,6 @@ import {
   Input,
   ContentChild,
   AfterContentInit,
-  ElementRef,
-  AfterViewInit,
-  OnChanges,
-  SimpleChanges,
 } from '@angular/core';
 import {
   FormFieldLabelDirective,

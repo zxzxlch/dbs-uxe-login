@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
+import { Component, ViewChildren, QueryList } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MOCK_USERNAME } from 'src/app/auth/auth.service';
@@ -106,7 +106,7 @@ export class LoginPanelComponent {
     }
   }
 
-  // Just for this mock scenario, show the mock username and password 
+  // Just for this mock scenario, show the mock username and password
   onSelectUsernameOrPassword(evt: Event): void {
     evt.preventDefault();
     alert(`Username: ${MOCK_USERNAME}\nPassword: ${MOCK_PASSWORD}`);
