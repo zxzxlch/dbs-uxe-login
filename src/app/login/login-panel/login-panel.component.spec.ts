@@ -1,4 +1,4 @@
-/* import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginPanelComponent } from './login-panel.component';
 
@@ -8,15 +8,14 @@ describe('LoginPanelComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [LoginPanelComponent]
+      declarations: [LoginPanelComponent],
     });
     fixture = TestBed.createComponent(LoginPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  xit('should create', () => {
     expect(component).toBeTruthy();
   });
 });
- */
