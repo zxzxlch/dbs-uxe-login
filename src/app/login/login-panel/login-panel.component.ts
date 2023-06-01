@@ -107,7 +107,7 @@ export class LoginPanelComponent {
   }
 
   // Just for this mock scenario, show the mock username and password
-  onSelectUsernameOrPassword(evt: Event): void {
+  onSelectForgotUsernameOrPassword(evt: Event): void {
     evt.preventDefault();
     alert(`Username: ${MOCK_USERNAME}\nPassword: ${MOCK_PASSWORD}`);
   }
