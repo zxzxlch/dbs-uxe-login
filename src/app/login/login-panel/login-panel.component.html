@@ -13,8 +13,10 @@
     class="login-form mt-12 space-y-4"
   >
     <app-form-field-error
-      *ngIf="submitted && loginForm.errors?.['failedAuthentication']"
-      message="Wrong username or password. Try again or select Forgot username or password."
+      ariaLive="polite"
+      ariaAtomic="true"
+      [class.hidden]="!(submitted && loginForm.errors?.['failedAuthentication'])"
+      [message]="loginForm.errors?.['failedAuthentication'] ? 'Wrong username or password. Try again or select Forgot username or password.' : ''"
     >
     </app-form-field-error>
     <!-- Form field  -->
