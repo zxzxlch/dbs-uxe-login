@@ -16,6 +16,7 @@ import {
   FormFieldInputDirective,
   FormFieldLabelDirective,
 } from './shared/form-field/form-field.directive';
+import { LineWaveAnimComponent } from './shared/line-wave-anim/line-wave-anim.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {
     FormFieldLabelDirective,
     FormFieldInputDirective,
     LoadingAnimComponent,
+    LineWaveAnimComponent,
   ],
 })
 export class AppModule {}

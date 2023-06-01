@@ -13,7 +13,9 @@
   --font-weight-semibold: theme(fontWeight.semibold);
   --color-primary: theme(colors.primary);
   --color-white: theme(colors.white);
+  --color-gray-50: theme(colors.gray.50);
   --color-gray-100: theme(colors.gray.100);
+  --color-gray-200: theme(colors.gray.200);
   --color-gray-400: theme(colors.gray.400);
   --color-gray-900: theme(colors.gray.900);
   --color-red-100: theme(colors.red.100);

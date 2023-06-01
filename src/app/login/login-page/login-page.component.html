@@ -1,8 +1,9 @@
 <!-- Cover the viewport -->
-<div class="flex flex-col min-h-screen">
+<div class="flex flex-col min-h-screen bg-[#fff8f8]">
   <!-- Allow content to grow but footer remains fixed in height -->
-  <div class="flex flex-auto bg-gray-200">
+  <div class="flex flex-auto">
     <app-login-panel class="flex flex-col w-[400px]"></app-login-panel>
+    <app-line-wave-anim class="flex-1 hidden min-[400px]:block"></app-line-wave-anim>
   </div>
   <app-footer class="flex-none"></app-footer>
 </div>
