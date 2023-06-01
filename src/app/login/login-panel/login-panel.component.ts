@@ -71,8 +71,10 @@ export class LoginPanelComponent {
     });
 
     // If form has errors, cancel submit, focus on first field with errors
-    // TODO: Focus on first field with error
-    if (!this.loginForm.valid) return;
+    if (!this.loginForm.valid) {
+      this.focusErrorField();
+      return;
+    }
 
     // Disable form and show loading state
     const { username, password } = this.loginForm.value;
@@ -85,8 +87,20 @@ export class LoginPanelComponent {
       } else {
         // Show authentication errors
         this.loginForm.setErrors({ failedAuthentication: true });
-        // TODO: Focus on the first field with an error
+        this.focusErrorField();
       }
     });
+  }
+
+  focusErrorField(): void {
+    if (!this.formFields) return;
+
+    for (const formField of this.formFields) {
+      // Find the first field with an error
+      if (!formField.formControlName) continue;
+      if (formField.formControlName.errors) {
+        formField.inputElement?.focus()
+      }
+    }
   }
 }
